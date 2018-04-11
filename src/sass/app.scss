@@ -1,0 +1,44 @@
+.landing {
+  h2 {
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .bg {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template: 'a a a';
+    background-image: url("../../static/placeholderbg.jpg");
+    background-size: cover;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: -10;
+
+
+    .col {
+      transform: skewX(-5deg);
+      opacity: 0.2;
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .day-one {
+      background-color: red;
+    }
+    .day-two {
+      background-color: blue;
+    }
+    .day-three {
+      background-color: white;
+    }
+  }
+
+}
+

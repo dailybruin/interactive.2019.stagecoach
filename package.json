@@ -1,0 +1,38 @@
+{
+  "name": "flatpage.coachella.2018",
+  "version": "0.0.0",
+  "description": "Coachella Flatpage 2018",
+  "main": "index.js",
+  "scripts": {
+    "precommit": "lint-staged",
+    "format": "prettier --write \"{src,tests}/**/*.ts\" --single-quote --trailing-comma es5",
+    "lint": "eslint --fix verbose \"src/**/*.js\"",
+    "watch": "parcel index.html"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint",
+      "npm run format",
+      "git add ."
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-env": "^1.6.1",
+    "parcel-bundler": "^1.7.0",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.4",
+    "node-sass": "^4.8.3",
+    "prettier": "^1.11.1"
+  }
+}
