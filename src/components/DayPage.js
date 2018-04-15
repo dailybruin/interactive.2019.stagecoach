@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import LiveContentFeed from './LiveContentFeed';
-import '../sass/daypage.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import LiveContentFeed from "./LiveContentFeed";
+import "../sass/daypage.scss";
 
 export default class DayPage extends React.Component {
   render() {

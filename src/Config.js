@@ -3,6 +3,7 @@ const KERCKHOFF_LIVE_EVENT = {
   INIT: 'init',
   OK: 'ack',
   ERR: 'err',
+  UPDATE: 'upd',
 };
 
 export { LIVE_API_ENDPOINT, KERCKHOFF_LIVE_EVENT };
