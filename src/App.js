@@ -9,7 +9,7 @@ import './sass/app.scss';
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="app">
           <Switch>
             <Route exact path="/" component={LandingPage} />
