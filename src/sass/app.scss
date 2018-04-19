@@ -5,45 +5,94 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 10em;
-  font-size: 16px;
+  font-size: 12px;
+  margin-top: 1em;
+
+  @media (min-width: 768px) {
+    margin-top: 10em;
+    font-size: 16px;
+
+    h4 {
+      margin-left: -5em;
+    }
+
+    .bg {
+      h3 {
+        font-size: 4em;
+      }
+    }
+  }
+
+  .live {
+    font-weight: 700;
+  }
+
+  .landing-box {
+
+    @media (min-width: 768px) {
+      margin-top: 4em;
+    }
+
+    margin-top: 1.5em;
+    padding: 0.5em;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    min-height: 100px;
+    max-width: 600px;
+    //background: rgba(255, 193, 166, 0.5);
+
+    span {
+      font-weight: 700;
+      font-size: 0.7em;
+    }
+
+    h5 {
+      font-weight: 700;
+      margin-bottom: 0em;
+    }
+  }
 
   h4 {
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 3em;
+    font-size: 1.2em;
     font-weight: 400;
-    margin-bottom: -0.6em;
-    font-size: 2em;
-    margin-left: 20px;
-    text-align: left;
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: -0.3em;
   }
 
   h2 {
     color: white;
     text-align: center;
-    font-size: 7em;
     font-family: 'Abril Fatface', cursive;
     font-weight: normal;
-    margin-top:0.1em;
+    margin-top: 0em;
     text-align: center;
+    font-size: 5em;
   }
 
   .bg {
     display: flex;
     height: 100vh;
     width: 100vw;
-    background-image: url("../assets/groundblurdesat.jpg");
+    background-image: url("../assets/campingblur.jpg");
     background-size: cover;
     overflow: hidden;
     position: absolute;
     top: 0;
     z-index: -10;
+    transition: background-image 1s ease-in-out;
+
+    .alt {
+      background-image: url("../assets/groundblurdesat.jpg");
+    }
 
     .col {
       opacity: 0.4;
       position: relative;
-      transform: skewX(-4deg);
+      transform: skewX(-3deg);
       transition: opacity 0.5s linear, flex-grow 0.1s linear;
       flex-grow: 1;
       display: flex;
@@ -55,7 +104,7 @@
         font-family: 'Anton', sans-serif;
         transform: skewX(4deg);
         color: white;
-        font-size: 5rem;
+        margin-bottom: 1em;
       }
 
       a {
@@ -68,7 +117,7 @@
 
       &:hover {
         opacity: 0.9;
-        flex-grow: 1.8;
+        flex-grow: 1.4;
       }
 
       h5 {

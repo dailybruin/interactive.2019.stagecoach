@@ -11,8 +11,18 @@ export default class LiveContentFeed extends React.Component {
   }
 
   initialize() {
-    this.socket.emit(KERCKHOFF_LIVE_EVENT.INIT, { id: 'its a me' });
+    // Delay by just a tiny bit to allow the handshake to finish
+    setTimeout(() => {
+      this.socket.emit(KERCKHOFF_LIVE_EVENT.INIT, { id: 'flatpages/test' });
+    }, 100);
+
     // Bind handlers
+    this.socket.on('disconnect', reason => {
+      console.log(reason);
+      this.setState({
+        live: false,
+      });
+    });
 
     this.socket.on(KERCKHOFF_LIVE_EVENT.OK, () => {
       this.setState({
@@ -21,6 +31,8 @@ export default class LiveContentFeed extends React.Component {
     });
 
     this.socket.on(KERCKHOFF_LIVE_EVENT.UPDATE, payload => {
+      console.log('received update');
+      console.log(payload);
       this.setState({
         content: payload,
       });
