@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import LiveContentFeed from './LiveContentFeed';
 import '../sass/daypage.scss';
 
