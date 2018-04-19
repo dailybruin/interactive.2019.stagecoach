@@ -1,5 +1,55 @@
 @import 'variables';
 
+.feed {
+
+  min-height: 300px;
+  li {
+    margin-top: 2em;
+  }
+
+  margin-top: 1em;
+  .last-update {
+    color: #4f4f4f;
+  }
+
+  &.day-one {
+    h2 {
+      color: #F9EABB;
+    }
+
+    .FeedCard {
+      .content {
+        border-color: #F9EABB;
+      }
+    }
+  }
+
+  &.day-two {
+    h2 {
+      color: #F9C9BA;
+    }
+    .FeedCard {
+      .content {
+        border-color: #F9C9BA;
+      }
+    }
+
+  }
+
+  &.day-three {
+    h2 {
+      color: #F9BBB9;
+    }
+    .FeedCard {
+      .content {
+        border-color: #F9BBB9;
+      }
+    }
+
+  }
+
+}
+
 .FeedCard {
   display: flex;
   flex-direction: column;
@@ -18,25 +68,22 @@
     }
   }
 
-  .day-one {
-    h2 {
-      color: #F9C9BA;
-    }
-  }
-
-
-  .content{
+  .content {
     text-align: left;
-    padding-left: 3em;
-    padding-right: 3em;
-    padding-top: 2em;
-    padding-bottom: 2em;
     border: .2em solid;
-    border-color: #F9C9BA;
+    padding: 0.5em 1.8em;
     h2{
       font-size: 3rem;
       color: #4f4f4f;
     }
+
+    @media (min-width: 768px) {
+      padding-left: 3em;
+      padding-right: 3em;
+      padding-top: 2em;
+      padding-bottom: 2em;
+    }
+
   }
 
   .title{

@@ -1,9 +1,77 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import testImg from '../assets/grounds.jpg';
+import TimeAgo from 'timeago-react';
 
 export default class LandingPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  getLatest() {
+    const d1 = new Date('April 20, 2018');
+    const d2 = new Date('April 21, 2018');
+    const d3 = new Date('April 22, 2018');
+    const today = new Date();
+    let src = 'flatpages/coachella-day-one';
+    let day = 'Day 3';
+    if (today < d3 && today > d1) {
+      src = 'flatpages/coachella-day-two';
+      day = 'Day 2';
+    } else if (today <= d1) {
+      src = 'flatpages/coachella-day-one';
+      day = 'Day 1';
+    }
+    fetch('https://kerckhoff.dailybruin.com/api/packages/' + src)
+      .then(res => res.json())
+      .then(data => {
+        const posts = data.data['data.aml'].posts.map(post => {
+          if (post.image) {
+            const img = data.images.s3[post.image];
+            if (img) {
+              post.image = img.url;
+            }
+          }
+          return post;
+        });
+        const latest = posts[posts.length - 1];
+        console.log(latest);
+        this.setState({
+          post: latest,
+          d: day,
+        });
+      });
+  }
+
+  componentDidMount() {
+    this.getLatest();
+  }
+
   render() {
+    const box = this.state.post ? (
+      <div>
+        <div className="row no-gutters">
+          <div className="col-md-8 pr-2">
+            <h5>THE LATEST</h5>
+            <span>{this.state.d + ' | ' + this.state.post.time}</span>
+            <p>
+              {this.state.post.text.length < 300
+                ? this.state.post.text
+                : this.state.post.text.substring(0, 300).concat('...')}
+            </p>
+          </div>
+          <div className="col-md-4 d-flex align-items-center">
+            <img
+              className="img-fluid img-thumbnail"
+              src={this.state.post.image}
+            />
+          </div>
+        </div>
+      </div>
+    ) : (
+      <h5 className="text-center">...</h5>
+    );
+
     return (
       <div className="landing">
         <div className="bg">
@@ -26,21 +94,7 @@ export default class LandingPage extends React.Component {
             the Daily Bruin <span className="live">LIVE</span> at
           </h4>
           <h2>coachella 2018</h2>
-          <div className="landing-box col-md-9 mx-auto">
-            <h5>THE LATEST</h5>
-            <span>Posted 5 hours ago</span>
-            <div className="row no-gutters">
-              <p className="col-md-8 pr-2">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
-              <div className="col-md-4">
-                <img className="img-fluid img-thumbnail" src={testImg} />
-              </div>
-            </div>
-          </div>
+          <div className="landing-box col-md-9 mx-auto">{box}</div>
         </div>
       </div>
     );

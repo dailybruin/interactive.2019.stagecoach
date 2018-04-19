@@ -2,13 +2,23 @@
   .heading {
     font-family: 'Abril Fatface', cursive;
     text-align: right;
-    padding-top: 25px;
-    padding-right: 50px;
-    font-size: 63px;
+    font-size: 4em;
     color: #F9C9BA;
+    padding-right: 10px;
+
+    @media (min-width: 768px) {
+      padding-top: 25px;
+      padding-right: 50px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
   }
 
   .row {
+    transition: border-color 100ms linear;
     border-bottom: 15px solid #F9C9BA;
   }
 
@@ -21,44 +31,31 @@
     color: #4f4f4f;
   }
 
-  #day-1-link {
-    background-color: #F9EABB;
-    -webkit-transform: skew(-30deg);
-    -moz-transform: skew(-30deg);
-      -o-transform: skew(-30deg);
+  .angled-link {
+    @media (min-width: 768px) {
+      transform: skew(-30deg);
+    }
+
+    .text {
+      @media (min-width: 768px) {
+        transform: skew(30deg);
+      }
+      }
   }
 
-  #day-1-link .text {
-    -webkit-transform: skew(30deg);
-    -moz-transform: skew(30deg);
-      -o-transform: skew(30deg);
+  #day-1-link {
+    background-color: #F9EABB;
   }
+
 
   #day-2-link {
     background-color: #F9C9BA;
-    -webkit-transform: skew(-30deg);
-    -moz-transform: skew(-30deg);
-      -o-transform: skew(-30deg);
-  }
-
-  #day-2-link .text {
-    -webkit-transform: skew(30deg);
-    -moz-transform: skew(30deg);
-      -o-transform: skew(30deg);
   }
 
   #day-3-link {
     background-color: #F9BBB9;
-    -webkit-transform: skew(-30deg);
-    -moz-transform: skew(-30deg);
-      -o-transform: skew(-30deg);
   }
 
-  #day-3-link .text {
-    -webkit-transform: skew(30deg);
-    -moz-transform: skew(30deg);
-      -o-transform: skew(30deg);
-  }
 
   .col-lg a {
     position: absolute;
