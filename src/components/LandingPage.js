@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import testImg from '../assets/grounds.jpg';
+import React from "react";
+import { Link } from "react-router-dom";
+import testImg from "../assets/grounds.jpg";
 
 export default class LandingPage extends React.Component {
   render() {
