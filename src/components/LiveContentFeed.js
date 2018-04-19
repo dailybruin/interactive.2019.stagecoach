@@ -1,6 +1,6 @@
-import React from 'react';
-import ioClient from 'socket.io-client';
-import { LIVE_API_ENDPOINT, KERCKHOFF_LIVE_EVENT } from '../Config';
+import React from "react";
+import ioClient from "socket.io-client";
+import { LIVE_API_ENDPOINT, KERCKHOFF_LIVE_EVENT } from "../Config";
 
 export default class LiveContentFeed extends React.Component {
   constructor(props) {
@@ -11,18 +11,18 @@ export default class LiveContentFeed extends React.Component {
   }
 
   initialize() {
-    this.socket.emit(KERCKHOFF_LIVE_EVENT.INIT, { id: 'its a me' });
+    this.socket.emit(KERCKHOFF_LIVE_EVENT.INIT, { id: "its a me" });
     // Bind handlers
 
     this.socket.on(KERCKHOFF_LIVE_EVENT.OK, () => {
       this.setState({
-        live: true,
+        live: true
       });
     });
 
     this.socket.on(KERCKHOFF_LIVE_EVENT.UPDATE, payload => {
       this.setState({
-        content: payload,
+        content: payload
       });
     });
   }
@@ -31,7 +31,7 @@ export default class LiveContentFeed extends React.Component {
     return (
       <div>
         <h2>Test Connection</h2>
-        <h4>{this.state.live ? 'LIVE' : 'NOT LIVE'}</h4>
+        <h4>{this.state.live ? "LIVE" : "NOT LIVE"}</h4>
         <code>{JSON.stringify(this.state.content, 4)}</code>
       </div>
     );
