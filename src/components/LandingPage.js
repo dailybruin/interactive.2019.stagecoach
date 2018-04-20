@@ -14,13 +14,15 @@ export default class LandingPage extends React.Component {
     const d3 = new Date('April 22, 2018');
     const today = new Date();
     let latest_link = '#/day/3';
-    let src = 'flatpages/coachella-day-one';
+    let src = 'flatpages/coachella-day-three';
     let day = 'Day 3';
-    if (today < d3 && today > d1) {
+    if (today < d3 && today >= d2) {
+      console.log('Wad');
       src = 'flatpages/coachella-day-two';
       day = 'Day 2';
       latest_link = '#/day/2';
-    } else if (today <= d1) {
+    } else if (today < d3 && today >= d1) {
+      console.log('da');
       src = 'flatpages/coachella-day-one';
       day = 'Day 1';
       latest_link = '#/day/1';

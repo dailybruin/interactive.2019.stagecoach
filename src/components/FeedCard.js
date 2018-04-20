@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../sass/feedcard.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import "../sass/feedcard.scss";
 
 export default class FeedCard extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ export default class FeedCard extends React.Component {
   render() {
     return (
       <div className="FeedCard">
-        <div className={'heading row no-gutters '}>
+        <div className={"heading row no-gutters "}>
           <div className="category col text-left">
             <h2>{this.props.content.category}</h2>
           </div>
@@ -25,7 +25,7 @@ export default class FeedCard extends React.Component {
             <h2>{this.props.content.time}</h2>
           </div>
         </div>
-        <div className={'content'}>
+        <div className={"content"}>
           <div className="title row">
             <h2>{this.props.content.title}</h2>
           </div>
@@ -41,8 +41,8 @@ export default class FeedCard extends React.Component {
               dangerouslySetInnerHTML={{
                 __html: this.props.content.text.replace(
                   /(?:\r\n|\r|\n)/g,
-                  '</br>'
-                ),
+                  "</br>"
+                )
               }}
             />
           </div>
