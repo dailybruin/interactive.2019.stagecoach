@@ -1,8 +1,8 @@
-import React from 'react';
-import ioClient from 'socket.io-client';
-import { LIVE_API_ENDPOINT, KERCKHOFF_LIVE_EVENT } from '../Config';
-import FeedCard from './FeedCard';
-import TimeAgo from 'timeago-react';
+import React from "react";
+import ioClient from "socket.io-client";
+import { LIVE_API_ENDPOINT, KERCKHOFF_LIVE_EVENT } from "../Config";
+import FeedCard from "./FeedCard";
+import TimeAgo from "timeago-react";
 
 export default class LiveContentFeed extends React.Component {
   constructor(props) {
@@ -29,36 +29,36 @@ export default class LiveContentFeed extends React.Component {
 
   initialize(slug) {
     // Delay by just a tiny bit to allow the handshake to finish
-    this.socket.on('connect', () => {
+    this.socket.on("connect", () => {
       setTimeout(() => {
-        console.log('Sending init', slug);
+        console.log("Sending init", slug);
         this.socket.emit(KERCKHOFF_LIVE_EVENT.INIT, { id: slug });
       }, 300);
     });
 
     // Bind handlers
-    this.socket.on('disconnect', reason => {
+    this.socket.on("disconnect", reason => {
       console.log(reason);
       this.setState({
-        live: false,
+        live: false
       });
     });
 
     this.socket.on(KERCKHOFF_LIVE_EVENT.OK, () => {
       this.setState({
-        live: true,
+        live: true
       });
     });
 
     this.socket.on(KERCKHOFF_LIVE_EVENT.UPDATE, payload => {
-      console.log('received update');
+      console.log("received update");
       console.log(payload);
       let toSet = {};
 
       if (payload.err) {
         toSet = payload;
       } else {
-        toSet = payload.data['data.aml'].posts
+        toSet = payload.data["data.aml"].posts
           .map(post => {
             if (post.image) {
               const img = payload.images.s3[post.image];
@@ -73,7 +73,7 @@ export default class LiveContentFeed extends React.Component {
 
       this.setState({
         content: toSet,
-        lastUpdate: Date.now(),
+        lastUpdate: Date.now()
       });
     });
   }
@@ -115,7 +115,7 @@ export default class LiveContentFeed extends React.Component {
       );
 
     return (
-      <div className={'container feed ' + this.props.feedClass}>
+      <div className={"container feed " + this.props.feedClass}>
         <div className="row">
           <div className="col">
             <h4>{live}</h4>

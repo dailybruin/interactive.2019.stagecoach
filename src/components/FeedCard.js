@@ -37,7 +37,14 @@ export default class FeedCard extends React.Component {
             />
           </div>
           <div className="text row">
-            <h3>{this.props.content.text}</h3>
+            <h3
+              dangerouslySetInnerHTML={{
+                __html: this.props.content.text.replace(
+                  /(?:\r\n|\r|\n)/g,
+                  '</br>'
+                ),
+              }}
+            />
           </div>
         </div>
       </div>

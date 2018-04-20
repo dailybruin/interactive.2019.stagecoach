@@ -1,10 +1,10 @@
-import 'normalize.css';
-import 'normalize.css';
-import React from 'react';
-import LandingPage from './components/LandingPage';
-import DayPage from './components/DayPage';
-import { HashRouter, Route, Switch } from 'react-router-dom';
-import './sass/app.scss';
+import "normalize.css";
+import "normalize.css";
+import React from "react";
+import LandingPage from "./components/LandingPage";
+import DayPage from "./components/DayPage";
+import { HashRouter, Route, Switch } from "react-router-dom";
+import "./sass/app.scss";
 
 class App extends React.Component {
   render() {
