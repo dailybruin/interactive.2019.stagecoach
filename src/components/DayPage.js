@@ -1,19 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import LiveContentFeed from "./LiveContentFeed";
-import "../sass/daypage.scss";
-import dbLogo from "../assets/db_logo.svg";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import LiveContentFeed from './LiveContentFeed';
+import '../sass/daypage.scss';
+import dbLogo from '../assets/db_logo.svg';
 
 export default class DayPage extends React.Component {
   constructor(props) {
     super(props);
-    this.borderColors = ["#F9EABB", "#F9C9BA", "#F9BBB9"];
+    this.borderColors = ['#F9EABB', '#F9C9BA', '#F9BBB9'];
     this.feeds = [
-      "flatpages/coachella-day-one",
-      "flatpages/coachella-day-two",
-      "flatpages/coachella-day-three"
+      'flatpages/coachella-day-one',
+      'flatpages/coachella-day-two',
+      'flatpages/coachella-day-three',
     ];
-    this.feedClass = ["day-one", "day-two", "day-three"];
+    this.feedClass = ['day-one', 'day-two', 'day-three'];
   }
 
   render() {
@@ -29,7 +29,7 @@ export default class DayPage extends React.Component {
               style={{
                 borderColor: this.borderColors[
                   this.props.match.params.dayNum - 1
-                ]
+                ],
               }}
             >
               <div className="col-lg angled-link" id="day-1-link">
@@ -58,6 +58,7 @@ export default class DayPage extends React.Component {
             </a>
             <span className="sep" />
             <p className="cred">
+              Stories by Nate Nickolai and photography by Michael Zschornack.
               Page designed and developed by Katie Cai, Rebecca Xu, Callista Wu
               and Hongyi Zhang. Built with Kerckhoff.
             </p>
