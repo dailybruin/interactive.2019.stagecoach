@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import TimeAgo from 'timeago-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import TimeAgo from "timeago-react";
 
 export default class LandingPage extends React.Component {
   constructor(props) {
@@ -9,28 +9,28 @@ export default class LandingPage extends React.Component {
   }
 
   getLatest() {
-    const d1 = new Date('April 20, 2018');
-    const d2 = new Date('April 21, 2018');
-    const d3 = new Date('April 22, 2018');
+    const d1 = new Date("April 20, 2018");
+    const d2 = new Date("April 21, 2018");
+    const d3 = new Date("April 22, 2018");
     const today = new Date();
-    let latest_link = '#/day/3';
-    let src = 'flatpages/coachella-day-three';
-    let day = 'Day 3';
+    let latest_link = "#/day/3";
+    let src = "flatpages/coachella-day-three";
+    let day = "Day 3";
     if (today < d3 && today >= d2) {
-      console.log('Wad');
-      src = 'flatpages/coachella-day-two';
-      day = 'Day 2';
-      latest_link = '#/day/2';
+      console.log("Wad");
+      src = "flatpages/coachella-day-two";
+      day = "Day 2";
+      latest_link = "#/day/2";
     } else if (today < d3 && today >= d1) {
-      console.log('da');
-      src = 'flatpages/coachella-day-one';
-      day = 'Day 1';
-      latest_link = '#/day/1';
+      console.log("da");
+      src = "flatpages/coachella-day-one";
+      day = "Day 1";
+      latest_link = "#/day/1";
     }
-    fetch('https://kerckhoff.dailybruin.com/api/packages/' + src)
+    fetch("https://kerckhoff.dailybruin.com/api/packages/" + src)
       .then(res => res.json())
       .then(data => {
-        const posts = data.data['data.aml'].posts.map(post => {
+        const posts = data.data["data.aml"].posts.map(post => {
           if (post.image) {
             const img = data.images.s3[post.image];
             if (img) {
@@ -44,7 +44,7 @@ export default class LandingPage extends React.Component {
         this.setState({
           post: latest,
           d: day,
-          link: latest_link,
+          link: latest_link
         });
       });
   }
@@ -60,11 +60,11 @@ export default class LandingPage extends React.Component {
           <div className="col-md-8 pr-2">
             <a href={this.state.link}>
               <h5>THE LATEST</h5>
-              <span>{this.state.d + ' | ' + this.state.post.time}</span>
+              <span>{this.state.d + " | " + this.state.post.time}</span>
               <p>
                 {this.state.post.text.length < 100
                   ? this.state.post.text
-                  : this.state.post.text.substring(0, 100).concat('...')}
+                  : this.state.post.text.substring(0, 100).concat("...")}
               </p>
             </a>
           </div>
