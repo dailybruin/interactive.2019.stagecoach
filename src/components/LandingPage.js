@@ -62,9 +62,9 @@ export default class LandingPage extends React.Component {
               <h5>THE LATEST</h5>
               <span>{this.state.d + ' | ' + this.state.post.time}</span>
               <p>
-                {this.state.post.text.length < 300
+                {this.state.post.text.length < 100
                   ? this.state.post.text
-                  : this.state.post.text.substring(0, 300).concat('...')}
+                  : this.state.post.text.substring(0, 100).concat('...')}
               </p>
             </a>
           </div>

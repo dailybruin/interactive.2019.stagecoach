@@ -27,7 +27,10 @@
     font-weight: 700;
   }
 
+
   .landing-box {
+    transition: all 0.5s ease;
+
     a {
       color: white;
       text-decoration: none;
@@ -70,6 +73,15 @@
     h5 {
       font-weight: 700;
       margin-bottom: 0em;
+    }
+  }
+
+  .landing-box:hover {
+    background-color: white;
+    transform: translateY(0px);
+
+    a {
+      color: black;
     }
   }
 
