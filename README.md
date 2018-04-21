@@ -6,4 +6,4 @@ Coachella Flatpage
 2. `npm run watch`
 
 ### Deploying
-TBD
+It's deployed!
