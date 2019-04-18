@@ -13,7 +13,7 @@ class App extends React.Component {
         <div className="app">
           <Switch>
             <Route exact path="/" component={LandingPage} />
-            <Route path="/day/:dayNum" component={DayPage} />
+            <Route path="/category/:categoryName" component={DayPage} />
           </Switch>
         </div>
       </HashRouter>

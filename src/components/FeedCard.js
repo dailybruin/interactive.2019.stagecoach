@@ -19,7 +19,7 @@ export default class FeedCard extends React.Component {
       <div className="FeedCard">
         <div className={"heading row no-gutters "}>
           <div className="category col text-left">
-            <h2>{this.props.content.category}</h2>
+            <h2>{this.props.content.day}</h2>
           </div>
           <div className="time col text-right">
             <h2>{this.props.content.time}</h2>

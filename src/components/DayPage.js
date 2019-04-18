@@ -7,13 +7,13 @@ import dbLogo from '../assets/db_logo.svg';
 export default class DayPage extends React.Component {
   constructor(props) {
     super(props);
-    this.borderColors = ['#F9EABB', '#F9C9BA', '#F9BBB9'];
+    this.borderColors = ['#C6E7E5', '#F9C9BA', '#B2B7E5'];
     this.feeds = [
       'flatpages/coachella-day-one',
       'flatpages/coachella-day-two',
       'flatpages/coachella-day-three',
     ];
-    this.feedClass = ['day-one', 'day-two', 'day-three'];
+    this.feedClass = ['music', 'day-two', 'more'];
   }
 
   render() {
@@ -28,28 +28,28 @@ export default class DayPage extends React.Component {
               className="row"
               style={{
                 borderColor: this.borderColors[
-                  this.props.match.params.dayNum - 1
+                  (this.props.match.params.categoryName == "music") ? 0 : 2
                 ],
               }}
             >
               <div className="col-lg angled-link" id="day-1-link">
-                <div className="text">day one</div>
-                <Link to="/day/1" />
+                <div className="text">music</div>
+                <Link to="/category/music" />
               </div>
-              <div className="col-lg angled-link" id="day-2-link">
+              {/* <div className="col-lg angled-link" id="day-2-link">
                 <div className="text">day two</div>
                 <Link to="/day/2" />
-              </div>
+              </div> */}
               <div className="col-lg angled-link" id="day-3-link">
-                <div className="text">day three</div>
-                <Link to="/day/3" />
+                <div className="text">more</div>
+                <Link to="/category/more" />
               </div>
             </div>
           </div>
         </div>
         <LiveContentFeed
-          feedClass={this.feedClass[this.props.match.params.dayNum - 1]}
-          slug={this.feeds[this.props.match.params.dayNum - 1]}
+          feedClass={this.feedClass[(this.props.match.params.categoryName == 'music') ? 0 : 2]}
+          slug={this.feeds[(this.props.match.params.categoryName == 'music') ? 0 : 2]}
         />
         <footer className="footer">
           <div className="container foot py-3">

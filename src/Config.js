@@ -7,4 +7,6 @@ const KERCKHOFF_LIVE_EVENT = {
   REFRESH: "ref"
 };
 
-export { LIVE_API_ENDPOINT, KERCKHOFF_LIVE_EVENT };
+const KERCKHOFF_ENDPOINT = "https://kerckhoff.dailybruin.com/api/packages/";
+
+export { LIVE_API_ENDPOINT, KERCKHOFF_LIVE_EVENT, KERCKHOFF_ENDPOINT };

@@ -14,19 +14,19 @@ export default class LandingPage extends React.Component {
     const d3 = new Date("April 22, 2018");
     const today = new Date();
     let latest_link = "#/day/3";
-    let src = "flatpages/coachella-day-three";
+    let src = "flatpages/interactive.2019.coachella";
     let day = "Day 3";
-    if (today < d3 && today >= d2) {
-      console.log("Wad");
-      src = "flatpages/coachella-day-two";
-      day = "Day 2";
-      latest_link = "#/day/2";
-    } else if (today < d3 && today >= d1) {
-      console.log("da");
-      src = "flatpages/coachella-day-one";
-      day = "Day 1";
-      latest_link = "#/day/1";
-    }
+    // if (today < d3 && today >= d2) {
+    //   console.log("Wad");
+    //   src = "flatpages/coachella-day-two";
+    //   day = "Day 2";
+    //   latest_link = "#/day/2";
+    // } else if (today < d3 && today >= d1) {
+    //   console.log("da");
+    //   src = "flatpages/coachella-day-one";
+    //   day = "Day 1";
+    //   latest_link = "#/day/1";
+    // }
     fetch("https://kerckhoff.dailybruin.com/api/packages/" + src)
       .then(res => res.json())
       .then(data => {
@@ -43,8 +43,8 @@ export default class LandingPage extends React.Component {
         console.log(latest);
         this.setState({
           post: latest,
-          d: day,
-          link: latest_link
+          d: latest.day,
+          link: "#/category/" + latest.category,
         });
       });
   }
@@ -86,16 +86,16 @@ export default class LandingPage extends React.Component {
       <div className="landing">
         <div className="bg">
           <div className="day-one col">
-            <h3>DAY 1</h3>
-            <Link to="/day/1" />
+            <h3>MUSIC</h3>
+            <Link to="/category/music" />
           </div>
           {/* <div className="day-two col">
             <h3>DAY 2</h3>
             <Link to="/day/2" />
           </div> */}
           <div className="day-three col">
-            <h3>DAY 3</h3>
-            <Link to="/day/3" />
+            <h3>MORE</h3>
+            <Link to="/category/more" />
           </div>
         </div>
 
@@ -103,7 +103,7 @@ export default class LandingPage extends React.Component {
           <h4>
             the Daily Bruin <span className="live">LIVE</span> at
           </h4>
-          <h2>coachella 2018</h2>
+          <h2>coachella 2019</h2>
           <div className="landing-box col-12 mx-auto">{box}</div>
         </div>
       </div>

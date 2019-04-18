@@ -1,5 +1,9 @@
 @import 'variables';
 
+body {
+  overflow-x: hidden;
+}
+
 .landing {
   display: flex;
   align-items: center;
@@ -34,12 +38,12 @@
     a {
       color: white;
       text-decoration: none;
-    } 
+    }
 
     img {
       display: none;
     }
-    
+
     @media (min-width: 768px) {
       margin-top: 4em;
       left: 25vw;
@@ -161,7 +165,7 @@
     }
 
     .day-one {
-      background-color: #F2C94C;
+      background-color: #C6E7E5;
 
       &::before{
         background: inherit;
@@ -181,7 +185,7 @@
       background-color: #F27E4C;
     }
     .day-three {
-      background-color: #F24B69;
+      background-color: #B2B7E5;
 
       &::after{
         background: inherit;

@@ -1,6 +1,10 @@
 import React from "react";
-import ioClient from "socket.io-client";
-import { LIVE_API_ENDPOINT, KERCKHOFF_LIVE_EVENT } from "../Config";
+// import fetch from "isomorphic-fetch";
+import {
+  LIVE_API_ENDPOINT,
+  KERCKHOFF_LIVE_EVENT,
+  KERCKHOFF_ENDPOINT
+} from "../Config";
 import FeedCard from "./FeedCard";
 import TimeAgo from "timeago-react";
 
@@ -13,7 +17,6 @@ export default class LiveContentFeed extends React.Component {
   }
 
   setup(props, setState = true) {
-    this.socket = ioClient(LIVE_API_ENDPOINT);
     this.initialize(props.slug);
     if (setState)
       this.setState({ live: false, content: undefined, lastUpdate: undefined });
@@ -24,58 +27,37 @@ export default class LiveContentFeed extends React.Component {
   }
 
   handleRefresh() {
-    this.socket.emit(KERCKHOFF_LIVE_EVENT.REFRESH);
+    this.initialize(props.slug);
   }
 
   initialize(slug) {
-    // Delay by just a tiny bit to allow the handshake to finish
-    this.socket.on("connect", () => {
-      setTimeout(() => {
-        console.log("Sending init", slug);
-        this.socket.emit(KERCKHOFF_LIVE_EVENT.INIT, { id: slug });
-      }, 300);
-    });
+    let toSet = {};
 
-    // Bind handlers
-    this.socket.on("disconnect", reason => {
-      console.log(reason);
-      this.setState({
-        live: false
-      });
-    });
-
-    this.socket.on(KERCKHOFF_LIVE_EVENT.OK, () => {
-      this.setState({
-        live: true
-      });
-    });
-
-    this.socket.on(KERCKHOFF_LIVE_EVENT.UPDATE, payload => {
-      console.log("received update");
-      console.log(payload);
-      let toSet = {};
-
-      if (payload.err) {
-        toSet = payload;
-      } else {
-        toSet = payload.data["data.aml"].posts
+    fetch(
+      "https://kerckhoff.dailybruin.com/api/packages/flatpages/interactive.2019.coachella"
+    )
+      .then(response => {
+        return response.json();
+      })
+      .then(responseJSON => {
+        toSet = responseJSON.data["data.aml"].posts
           .map(post => {
             if (post.image) {
-              const img = payload.images.s3[post.image];
+              const img = responseJSON.images.s3[post.image];
               if (img) {
                 post.image = img.url;
               }
             }
+            // if (post.category == "music") {
             return post;
           })
+          .filter(mappedPost => mappedPost.category == this.props.feedClass)
           .reverse();
-      }
-
-      this.setState({
-        content: toSet,
-        lastUpdate: Date.now()
+        this.setState({
+          content: toSet,
+          lastUpdate: Date.now()
+        });
       });
-    });
   }
 
   render() {
@@ -107,8 +89,7 @@ export default class LiveContentFeed extends React.Component {
     const liveUpdate =
       isReadyAndNotError && this.state.lastUpdate ? (
         <span>
-          Last updated&nbsp;
-          <TimeAgo datetime={this.state.lastUpdate} live={true} />
+          Follow us on <a href="https://twitter.com/DailyBruinAE">Twitter</a> for live updates
         </span>
       ) : (
         <span />
