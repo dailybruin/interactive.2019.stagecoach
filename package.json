@@ -4,19 +4,11 @@
   "description": "Coachella Flatpage 2018",
   "main": "index.js",
   "scripts": {
-    "precommit": "lint-staged",
     "format": "prettier --write \"{src,tests}/**/*.ts\" --single-quote --trailing-comma es5",
     "lint": "eslint --fix verbose \"src/**/*.js\"",
     "watch": "parcel index.html",
     "build": "parcel build index.html --public-url ./"
   },
-  // "lint-staged": {
-  //   "*.js": [
-  //     "npm run lint",
-  //     "npm run format",
-  //     "git add ."
-  //   ]
-  // },
   "author": "",
   "license": "ISC",
   "dependencies": {
