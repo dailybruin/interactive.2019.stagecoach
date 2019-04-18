@@ -89,10 +89,10 @@ export default class LandingPage extends React.Component {
             <h3>DAY 1</h3>
             <Link to="/day/1" />
           </div>
-          <div className="day-two col">
+          {/* <div className="day-two col">
             <h3>DAY 2</h3>
             <Link to="/day/2" />
-          </div>
+          </div> */}
           <div className="day-three col">
             <h3>DAY 3</h3>
             <Link to="/day/3" />

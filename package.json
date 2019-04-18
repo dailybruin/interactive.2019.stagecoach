@@ -10,19 +10,20 @@
     "watch": "parcel index.html",
     "build": "parcel build index.html --public-url ./"
   },
-  "lint-staged": {
-    "*.js": [
-      "npm run lint",
-      "npm run format",
-      "git add ."
-    ]
-  },
+  // "lint-staged": {
+  //   "*.js": [
+  //     "npm run lint",
+  //     "npm run format",
+  //     "git add ."
+  //   ]
+  // },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
+    "json5": "^2.1.0",
     "normalize.css": "^8.0.0",
-    "parcel-bundler": "^1.7.0",
+    "parcel-bundler": "^1.12.3",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-router-dom": "^4.2.2",
@@ -30,13 +31,14 @@
     "timeago-react": "^2.0.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-preset-react": "^6.24.1",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.4",
-    "node-sass": "^4.8.3",
+    "node-sass": "^4.11.0",
     "prettier": "^1.11.1",
     "socketio": "^1.0.0"
   }
