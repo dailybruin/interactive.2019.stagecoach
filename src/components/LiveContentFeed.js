@@ -27,7 +27,7 @@ export default class LiveContentFeed extends React.Component {
   }
 
   handleRefresh() {
-    this.initialize(props.slug);
+    this.initialize(true);
   }
 
   initialize(slug) {

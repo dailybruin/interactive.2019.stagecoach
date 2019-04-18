@@ -60,7 +60,7 @@ export default class LandingPage extends React.Component {
           <div className="col-md-8 pr-2">
             <a href={this.state.link}>
               <h5>THE LATEST</h5>
-              <span>{this.state.d + " | " + this.state.post.time}</span>
+              <span>{this.state.d.toUpperCase() + " | " + this.state.post.time}</span>
               <p>
                 {this.state.post.text.length < 100
                   ? this.state.post.text

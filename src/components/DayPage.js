@@ -58,9 +58,9 @@ export default class DayPage extends React.Component {
             </a>
             <span className="sep" />
             <p className="cred">
-              Stories by Nate Nickolai and photography by Michael Zshornack.
+              Stories by Raunak Devjani and photography by Amy Dixon.
               Page designed and developed by Katie Cai, Rebecca Xu, Callista Wu
-              and Hongyi Zhang. Built with Kerckhoff.
+              , Michael Zhang and Hongyi Zhang. Built with Kerckhoff.
             </p>
           </div>
         </footer>
