@@ -34,7 +34,7 @@ export default class LiveContentFeed extends React.Component {
     let toSet = {};
 
     fetch(
-      "https://kerckhoff.dailybruin.com/api/packages/flatpages/interactive.2019.coachella"
+      "https://kerckhoff.dailybruin.com/api/packages/flatpages/interactive.2019.stagecoach"
     )
       .then(response => {
         return response.json();

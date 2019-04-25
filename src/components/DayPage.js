@@ -7,7 +7,7 @@ import dbLogo from '../assets/db_logo.svg';
 export default class DayPage extends React.Component {
   constructor(props) {
     super(props);
-    this.borderColors = ['#C6E7E5', '#F9C9BA', '#B2B7E5'];
+    this.borderColors = ['#F3DD8F', '#F9C9BA', '#D8C0AE'];
     this.feeds = [
       'flatpages/coachella-day-one',
       'flatpages/coachella-day-two',
@@ -21,7 +21,7 @@ export default class DayPage extends React.Component {
       <div>
         <div className="day-page">
           <h2 className="heading">
-            <Link to="/">coachella</Link>
+            <Link to="/">STAGECOACH</Link>
           </h2>
           <div className="container-full">
             <div

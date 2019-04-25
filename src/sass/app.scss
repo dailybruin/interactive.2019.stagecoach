@@ -16,10 +16,6 @@ body {
     margin-top: 10em;
     font-size: 16px;
 
-    h4 {
-      margin-left: -5em;
-    }
-
     .bg {
       h3 {
         font-size: 4em;
@@ -91,7 +87,7 @@ body {
 
   h4 {
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.2em;
     font-weight: 400;
     font-size: 1.5em;
@@ -102,11 +98,15 @@ body {
   h2 {
     color: white;
     text-align: center;
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Bevan', serif;
     font-weight: normal;
     margin-top: 0em;
     text-align: center;
-    font-size: 5em;
+    font-size: 3em;
+
+    @media (min-width: 768px) {
+      font-size: 5em;
+    }
   }
 
   .bg {
@@ -137,7 +137,8 @@ body {
       flex-direction: column;
 
       h3 {
-        font-family: 'Anton', sans-serif;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
         transform: skewX(4deg);
         color: white;
           margin-bottom: 45vh;
@@ -165,7 +166,7 @@ body {
     }
 
     .day-one {
-      background-color: #C6E7E5;
+      background-color: #F3DD8F;
 
       &::before{
         background: inherit;
@@ -185,7 +186,7 @@ body {
       background-color: #F27E4C;
     }
     .day-three {
-      background-color: #B2B7E5;
+      background-color: #D8C0AE;
 
       &::after{
         background: inherit;

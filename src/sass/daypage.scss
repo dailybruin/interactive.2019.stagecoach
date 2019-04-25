@@ -1,13 +1,14 @@
 .day-page {
   .heading {
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Bevan', serif;
     text-align: right;
-    font-size: 4em;
-    color: #B2B7E5;
+    font-size: 2.5em;
+    color: #D8C0AE;
     padding-right: 10px;
 
     @media (min-width: 768px) {
       padding-top: 25px;
+      font-size: 4em;
       padding-right: 50px;
     }
 
@@ -19,12 +20,12 @@
 
   .row {
     transition: border-color 100ms linear;
-    border-bottom: 15px solid #B2B7E5;
+    border-bottom: 15px solid #D8C0AE;
   }
 
   .col-lg {
     padding: 8px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     text-align: center;
     font-size: 22px;
@@ -44,7 +45,7 @@
   }
 
   #day-1-link {
-    background-color: #C6E7E5;
+    background-color: #F3DD8F;
   }
 
 
@@ -53,7 +54,7 @@
   }
 
   #day-3-link {
-    background-color: #B2B7E5;
+    background-color: #D8C0AE;
   }
 
 

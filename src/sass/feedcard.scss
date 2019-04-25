@@ -14,12 +14,12 @@
 
   &.music {
     h2 {
-      color: #C6E7E5;
+      color: #F3DD8F;
     }
 
     .FeedCard {
       .content {
-        border-color: #C6E7E5;
+        border-color: #F3DD8F;
       }
     }
   }
@@ -38,11 +38,11 @@
 
   &.more {
     h2 {
-      color: #B2B7E5;
+      color: #D8C0AE;
     }
     .FeedCard {
       .content {
-        border-color: #B2B7E5;
+        border-color: #D8C0AE;
       }
     }
 
@@ -63,7 +63,7 @@
   .heading {
     h2 {
       font-size: 2rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-weight: bold;
     }
   }
@@ -87,7 +87,7 @@
   }
 
   .title{
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Bevan', serif;
   }
 
   .text{
@@ -95,7 +95,7 @@
       width: 100%;
       font-size: 1.3rem;
       padding-top: 2em;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Poppins', sans-serif;
       color: #4f4f4f;
 
       img {

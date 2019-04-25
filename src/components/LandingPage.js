@@ -14,7 +14,7 @@ export default class LandingPage extends React.Component {
     const d3 = new Date("April 22, 2018");
     const today = new Date();
     let latest_link = "#/day/3";
-    let src = "flatpages/interactive.2019.coachella";
+    let src = "flatpages/interactive.2019.stagecoach";
     let day = "Day 3";
     // if (today < d3 && today >= d2) {
     //   console.log("Wad");
@@ -101,9 +101,9 @@ export default class LandingPage extends React.Component {
 
         <div className="col-md-8">
           <h4>
-            the Daily Bruin <span className="live">LIVE</span> at
+            the Daily Bruin covers
           </h4>
-          <h2>coachella 2019</h2>
+          <h2>STAGECOACH 2019</h2>
           <div className="landing-box col-12 mx-auto">{box}</div>
         </div>
       </div>
